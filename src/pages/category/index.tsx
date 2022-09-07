@@ -1,11 +1,14 @@
+import { Box, Typography } from '@material-ui/core';
 import React from 'react';
 
-
-const Category = () => {
+interface ICategory {
+title: string
+}
+const Category: React.FC<ICategory> = ({ title }) => {
   return (
-    <div className="App">
-      Category
-    </div>
+    <Box >
+      <Typography variant = 'h3'>{ title}</Typography>
+    </Box>
   );
 }
 
