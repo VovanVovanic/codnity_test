@@ -1,12 +1,12 @@
 import React from 'react';
-import './App.css';
 
-function App() {
+
+const Main = ()=> {
   return (
     <div className="App">
-      Hello
+      Main
     </div>
   );
 }
 
-export default App;
+export default Main;

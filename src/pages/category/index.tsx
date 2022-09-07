@@ -1,12 +1,12 @@
 import React from 'react';
-import './App.css';
 
-function App() {
+
+const Category = () => {
   return (
     <div className="App">
-      Hello
+      Category
     </div>
   );
 }
 
-export default App;
+export default Category;
