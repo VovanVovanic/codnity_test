@@ -1,4 +1,5 @@
-import { IMessage, SET_LOADING, SET_MESSAGE } from "../auth/types"
+import { IMessage} from "../auth/types"
+import { SET_LOADING, SET_MESSAGE } from "../commonTypes"
 import { IbookItem, GET_BOOKS, InitStateType } from "./types"
 
 

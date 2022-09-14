@@ -1,4 +1,5 @@
-import { IMessage, SET_LOADING, SET_MESSAGE, SET_AUTH, InitStateType } from "./types"
+import { SET_LOADING, SET_MESSAGE } from "../commonTypes"
+import { IMessage, SET_AUTH, InitStateType } from "./types"
 
 export const initState = {
   isLoading: false,

@@ -1,3 +1,4 @@
+import { Box } from '@material-ui/core';
 import React, { useState } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -14,15 +15,18 @@ function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <main className='main'>
-          <Header setTitle={setTitle} title={ title} /> 
-          <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/category" element={<Category title={ title} />} />
-            <Route path="/details" element={<Details/>} />
-          </Routes>
-          <Footer />
-        </main>
+        <Box className='wrapper'>
+          <Header setTitle={setTitle} title={title} /> 
+          <main className='main'>
+            <Routes>
+              <Route path="/" element={<Main />} />
+              <Route path="/category" element={<Category title={title} />} />
+              <Route path="/details" element={<Details />} />
+            </Routes>
+          </main>
+          <Footer setActive={ setTitle} />
+      
+        </Box>
       </BrowserRouter>
     </Provider>
   );
