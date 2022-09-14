@@ -17,13 +17,13 @@ function App() {
       <BrowserRouter>
         <Box className='wrapper'>
           <Header setTitle={setTitle} title={title} /> 
-          <main className='main'>
+          <Box className='main'>
             <Routes>
               <Route path="/" element={<Main />} />
               <Route path="/category" element={<Category title={title} />} />
               <Route path="/details" element={<Details />} />
             </Routes>
-          </main>
+          </Box>
           <Footer setActive={ setTitle} />
       
         </Box>

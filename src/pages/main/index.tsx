@@ -32,7 +32,7 @@ const Main = () => {
   return (
     <Overlay>
       <Container >
-        <Box className={classes.main}>
+        <Box className={classes.mainPage}>
           <Title title={'Main Page'} /> 
           {articles.map((el, i) => {
             const tags = el.tags
