@@ -84,7 +84,7 @@ const Category: React.FC<ICategory> = ({ title , setTitle, setBookData}) => {
                           {book.title}
                         </Typography>
                         <Typography variant="body2">
-                          {book.author}
+                          Author: {book.author}
                         </Typography>
                       </CardContent>
                       <CardActions className={classes.btns}>
