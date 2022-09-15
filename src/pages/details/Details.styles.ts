@@ -10,7 +10,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      padding: "40px 0"
+      padding: "40px 20px"
     }
   })
 );

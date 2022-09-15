@@ -11,6 +11,7 @@ import { RootStateType } from '../../redux/store';
 import { useStyles } from './Category.styles';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useNavigate } from 'react-router';
+import Loader from '../../modules/loader';
 
 
 interface ICategory {
@@ -62,58 +63,60 @@ const Category: React.FC<ICategory> = ({ title , setTitle, setBookData}) => {
   return (
     <Overlay>
       <Container>
-        <Box className={classes.categoryPage}>
-          <Title title={title} />
-          <Grid container spacing={2} xs={12} className={classes.containerStyle}>
-            {books.map((book, i) => {
-              const url = "https://stephenking.com/images/books/dark_tower/hardcover_prop_embed.jpg"
-              return (
-                <Grid item >
-                  <Card className={classes.card}>
-                    <CardMedia
-                      component="img"
-                      alt="image"
-                      height="240"
-                      image={url}
-                      src={url}
-                    />
-                    <CardContent>
-                      <Typography gutterBottom variant="body1" component="div">
-                        {book.title}
-                      </Typography>
-                      <Typography variant="body2">
-                        {book.author}
-                      </Typography>
-                    </CardContent>
-                    <CardActions className={classes.btns}>
-                      <Button
-                        variant="contained"
-                        size='small'
-                        color='secondary'
-                        onClick={() => handleClickOpen(book._id, book.title)}
-                        style={{ fontSize: "12px" }}
-                        startIcon={<DeleteIcon />}>
-                        Delete
-                      </Button>
-                      <Button
-                        size="small"
-                        variant="contained"
-                        style={{ fontSize: "12px" }}
-                        onClick={()=>handleClickEdit(book)}
-                      >Edit</Button>
-                      <Button
-                        size="small"
-                        variant="contained"
-                        style={{ fontSize: "12px" }}
-                        onClick={()=>handleClickDetails(book)}
-                      >Learn More</Button>
-                    </CardActions>
-                  </Card>
-                </Grid>
-              )
-            })}
-          </Grid>
-        </Box>
+        {loading ?
+          <Loader /> :
+          <Box className={classes.categoryPage}>
+            <Title title={title} />
+            <Grid container spacing={2} xs={12} className={classes.containerStyle}>
+              {books.map((book, i) => {
+                const url = "https://stephenking.com/images/books/dark_tower/hardcover_prop_embed.jpg"
+                return (
+                  <Grid item >
+                    <Card className={classes.card}>
+                      <CardMedia
+                        component="img"
+                        alt="image"
+                        height="240"
+                        image={url}
+                        src={url}
+                      />
+                      <CardContent>
+                        <Typography gutterBottom variant="body1" component="div">
+                          {book.title}
+                        </Typography>
+                        <Typography variant="body2">
+                          {book.author}
+                        </Typography>
+                      </CardContent>
+                      <CardActions className={classes.btns}>
+                        <Button
+                          variant="contained"
+                          size='small'
+                          color='secondary'
+                          onClick={() => handleClickOpen(book._id, book.title)}
+                          style={{ fontSize: "12px" }}
+                          startIcon={<DeleteIcon />}>
+                          Delete
+                        </Button>
+                        <Button
+                          size="small"
+                          variant="contained"
+                          style={{ fontSize: "12px" }}
+                          onClick={() => handleClickEdit(book)}
+                        >Edit</Button>
+                        <Button
+                          size="small"
+                          variant="contained"
+                          style={{ fontSize: "12px" }}
+                          onClick={() => handleClickDetails(book)}
+                        >Learn More</Button>
+                      </CardActions>
+                    </Card>
+                  </Grid>
+                )
+              })}
+            </Grid>
+          </Box>}
       </Container>
       <Dialog
         open={open}

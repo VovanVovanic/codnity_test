@@ -104,7 +104,7 @@ const BookForm:React.FC<FormTypes> = ({setTitle, ...book}) => {
 
   return (
     <Grid container justify="center" style={{overflowY: "scroll"}}>
-      <Grid item xs={12} sm={8} md={10}>
+      <Grid item xs={12} sm={8} md={8}>
         <form onSubmit={formik.handleSubmit} className={classes.form}>
           <Paper className={classes.paper}>
             <FormControl style={{ width: "100%" }}>
