@@ -26,12 +26,11 @@ export const deleteBook = async (id: string) => {
 }
 
 export const updateBook = async (id: string, data: FormikErrorType,) => {
-  const response = await instance.patch<IbookItem>(`/books/:${id}`, {...data})
+  const response = await instance.patch<IbookItem>(`/books/:${id}`, { ...data })
   return response.data
 }
 
 export const addBook = async (data: FormikErrorType,) => {
   const response = await instance.post<IbookItem>(`/book/add`, {...data})
-  console.log(response, "res")
   return response.data
 }

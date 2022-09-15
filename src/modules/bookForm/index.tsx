@@ -70,7 +70,10 @@ const BookForm:React.FC<FormTypes> = ({setTitle, ...book}) => {
       if (id) {
         dispatch(fetchUpdateBook(id, {...values, type: type}))
       }
-      dispatch(fetchAddBook({ ...values, type: type }))
+      if (!id) {
+        dispatch(fetchAddBook({ ...values, type: type }))
+      }
+      
       navigate(`/`)
       setTitle("Main Page")
       resetForm({values: {title: "", author: "", description: "", type: "", url: ""}});
