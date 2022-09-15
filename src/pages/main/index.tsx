@@ -52,6 +52,7 @@ const Main = () => {
                             <Chip key={index} label={tag} onClick={() => handleSort(tag)} className={classes.tag} />
                           )
                         })}
+                        <Chip label={"All"} onClick={() => handleSort("All")} className={classes.tag} />
                       </Box>
 
                     </Box>

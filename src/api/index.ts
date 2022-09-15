@@ -10,7 +10,7 @@ const instance = axios.create({
 })
 
 export const getArticles = async (tag: string | null) => {
-  let queryString = tag ? `?tag=${tag}`: ""
+  let queryString = tag && tag !== "All" ? `?tag=${tag}`: ""
   const response = await instance.get<Array<iArticle>>(`/${queryString}`)
   return response.data
 }
