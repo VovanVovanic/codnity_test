@@ -53,6 +53,12 @@ const Category: React.FC<ICategory> = ({ title , setTitle, setBookData}) => {
     setBookData(book)
   }
 
+  const handleClickDetails = (book: IbookItem) => {
+    setBookData(book)
+    navigate('/details')
+    
+  }
+
   return (
     <Overlay>
       <Container>
@@ -95,7 +101,12 @@ const Category: React.FC<ICategory> = ({ title , setTitle, setBookData}) => {
                         style={{ fontSize: "12px" }}
                         onClick={()=>handleClickEdit(book)}
                       >Edit</Button>
-                      <Button size="small" variant="contained" style={{ fontSize: "12px" }}>Learn More</Button>
+                      <Button
+                        size="small"
+                        variant="contained"
+                        style={{ fontSize: "12px" }}
+                        onClick={()=>handleClickDetails(book)}
+                      >Learn More</Button>
                     </CardActions>
                   </Card>
                 </Grid>

@@ -24,7 +24,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Main />} />
               <Route path="/category" element={<Category title={title} setTitle={setTitle} setBookData={setBookData} />} />
-              <Route path="/details" element={<Details />} />
+              <Route path="/details" element={<Details details={bookData} />} />
               <Route path="/forms" element={<Forms title={title} bookData={bookData} setTitle={setTitle} />} />
             </Routes>
           </Box>
