@@ -27,7 +27,7 @@ const Details:React.FC<IDetails> = ({details}) => {
             />
             <Typography variant="h5" className={classes.introducions}>
               Read the introduction:
-              <Typography variant="h6">{details && details.title}. Written by: {details && details.author}.</Typography>
+              <Typography variant="body1">{details && details.title}. Written by: {details && details.author}.</Typography>
             </Typography>
             <Typography variant = "body2" style={{padding: "20px"}}>
               {details && details.description}

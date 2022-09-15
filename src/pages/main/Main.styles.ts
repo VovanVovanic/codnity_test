@@ -24,9 +24,10 @@ export const useStyles = makeStyles((theme: Theme) =>
       }
     },
     tag: {
-      margin: "0 5px",
-      backgroundColor: "	rgba(88,88,88, 0.7)",
-      fontWeight: "bold"
+      margin: "0 5px!important",
+      backgroundColor: "	rgba(88,88,88, 0.7)!important",
+      fontWeight: "bold",
+      borderRadius: "16px!important"
     },
     active: {color: "red"},
     author: {

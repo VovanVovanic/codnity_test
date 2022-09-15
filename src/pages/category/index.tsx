@@ -67,10 +67,10 @@ const Category: React.FC<ICategory> = ({ title , setTitle, setBookData}) => {
           <Loader /> :
           <Box className={classes.categoryPage}>
             <Title title={title} />
-            <Grid container spacing={2} xs={12} className={classes.containerStyle}>
+            <Grid container spacing={2} className={classes.containerStyle}>
               {books.map((book, i) => {
                 return (
-                  <Grid item >
+                  <Grid item key={i}>
                     <Card className={classes.card}>
                       <CardMedia
                         component="img"

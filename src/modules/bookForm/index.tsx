@@ -106,7 +106,7 @@ const BookForm:React.FC<FormTypes> = ({setTitle, ...book}) => {
   };
 
   return (
-    <Grid container justify="center" style={{overflowY: "scroll"}}>
+    <Grid container justifyContent="center" style={{overflowY: "scroll"}}>
       <Grid item xs={12} sm={8} md={8}>
         <form onSubmit={formik.handleSubmit} className={classes.form}>
           <Paper className={classes.paper}>
@@ -166,7 +166,7 @@ const BookForm:React.FC<FormTypes> = ({setTitle, ...book}) => {
 
                 </TextField>
 
-              <Grid container justify = "center" style={{paddingTop: "30px"}}>
+              <Grid container justifyContent = "center" style={{paddingTop: "30px"}}>
               <Button type={"submit"} variant={"contained"} color={"primary"}>
                 Submit
                   </Button>
