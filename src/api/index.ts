@@ -31,7 +31,7 @@ export const updateBook = async (id: string, data: FormikErrorType,) => {
 }
 
 export const addBook = async (data: FormikErrorType,) => {
-  const response = await instance.post<IbookItem>(`/book/`, {...data})
+  const response = await instance.post<IbookItem>(`/book/add`, {...data})
   console.log(response, "res")
   return response.data
 }

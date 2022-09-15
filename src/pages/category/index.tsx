@@ -69,7 +69,6 @@ const Category: React.FC<ICategory> = ({ title , setTitle, setBookData}) => {
             <Title title={title} />
             <Grid container spacing={2} xs={12} className={classes.containerStyle}>
               {books.map((book, i) => {
-                const url = "https://stephenking.com/images/books/dark_tower/hardcover_prop_embed.jpg"
                 return (
                   <Grid item >
                     <Card className={classes.card}>
@@ -77,8 +76,8 @@ const Category: React.FC<ICategory> = ({ title , setTitle, setBookData}) => {
                         component="img"
                         alt="image"
                         height="240"
-                        image={url}
-                        src={url}
+                        image={book.url}
+                        src={book.url}
                       />
                       <CardContent>
                         <Typography gutterBottom variant="body1" component="div">
