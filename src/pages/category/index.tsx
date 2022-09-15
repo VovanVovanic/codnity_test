@@ -64,11 +64,11 @@ const Category: React.FC<ICategory> = ({ title , setTitle, setBookData}) => {
       <Container>
         <Box className={classes.categoryPage}>
           <Title title={title} />
-          <Grid container spacing={4}>
+          <Grid container spacing={2} xs={12} className={classes.containerStyle}>
             {books.map((book, i) => {
               const url = "https://stephenking.com/images/books/dark_tower/hardcover_prop_embed.jpg"
               return (
-                <Grid item xs={4}>
+                <Grid item >
                   <Card className={classes.card}>
                     <CardMedia
                       component="img"

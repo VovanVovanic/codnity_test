@@ -41,13 +41,16 @@ const Main = () => {
                 <Typography variant='h6' className={classes.title}>
                   {el.title}
                   <Box className={classes.author}> Author: {el?.user.userName}</Box>
-                  <Box style={{paddingTop: "20px"}}>
+                  <Box style={{paddingTop: "20px", display: "flex", flexDirection: "column"}} className={classes.tags}>
                     <span className={classes.tagName}>Tags: </span>
-                    {tags.map((tag, index) => {
-                      return (
-                        <Chip key={index} label={tag} onClick={() => handleSort(tag)} className={classes.tag} />
-                      )
-                    })}
+                    <Box>
+                      {tags.map((tag, index) => {
+                        return (
+                          <Chip key={index} label={tag} onClick={() => handleSort(tag)} className={classes.tag} />
+                        )
+                      })}
+                    </Box>
+
                   </Box>
 
                 </Typography>
